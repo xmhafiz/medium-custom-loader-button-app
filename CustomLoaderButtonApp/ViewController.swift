@@ -13,7 +13,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func onClickedButton(_ sender: LoaderButton) {
+        sender.isLoading = true
+        // simulate sending request
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+            sender.isLoading = false
+        }
+    }
+    
 }
 
